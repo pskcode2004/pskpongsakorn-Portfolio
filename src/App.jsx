@@ -30,7 +30,7 @@ function App() {
 
   useEffect(() => {
     const handleResize = () => setIsDesktop(window.innerWidth >= 768);
-    window.addEventListener('resize', handleResize);
+    window.addEventListener('resize', handleResize, { passive: true });
     
     // Prevent scrolling while loading
     document.body.style.overflow = 'hidden';
@@ -208,7 +208,7 @@ function App() {
         setActiveSection('contact');
       }
     };
-    window.addEventListener('scroll', handleScrollComplete);
+    window.addEventListener('scroll', handleScrollComplete, { passive: true });
     
     return () => {
       observer.disconnect();
@@ -236,7 +236,7 @@ function App() {
       title: "Nyeta",
       description: "A Next.js application integrating TensorFlow for AI features, Upstash Redis for rate limiting, and Pusher for real-time capabilities.",
       link: "https://github.com/7sadakonr/Nyeta",
-      image: "https://images.unsplash.com/photo-1618401471353-b98afee0b2eb?auto=format&fit=crop&w=600&q=80",
+      image: "/nyeta-preview.webp",
       tech: [
         { name: "Next.js", icon: "devicon-nextjs-original" },
         { name: "React", icon: "devicon-react-original colored" },
@@ -411,12 +411,12 @@ function App() {
           </h2>
           <div style={{ maxWidth: '800px', margin: '0 auto' }}>
             <p className="body-default" style={{ color: 'var(--ink-secondary)', marginBottom: '16px', fontSize: '16px' }}>
-              I'm a Computer Science student with a strong foundation in software engineering, algorithms, and web development. 
-              I love building systems from the ground up, whether it's a sleek frontend interface or a robust backend API.
+              I'm a 4th-year Computer Science student with a strong focus on Full-Stack Development. 
+              Experienced in building end-to-end web applications through real-world projects, covering UI design, database integration, authentication, real-time communication, and AI integration.
             </p>
             <p className="body-default" style={{ color: 'var(--ink-secondary)', fontSize: '16px', marginBottom: '32px' }}>
-              My goal is to bridge the gap between complex technical problems and elegant, user-centric solutions. 
-              When I'm not coding, you can find me exploring new technologies or contributing to open-source projects.
+              Proficient in React, Next.js, TypeScript, Supabase, and PostgreSQL. 
+              Highly passionate about delivering secure, high-performance, and accessible systems that provide exceptional user experiences.
             </p>
             <div style={{ position: 'relative', display: 'inline-block' }}>
               <div 
