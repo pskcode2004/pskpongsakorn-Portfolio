@@ -245,6 +245,18 @@ function App() {
         { name: "TensorFlow", icon: "devicon-tensorflow-original colored" },
         { name: "Redis", icon: "devicon-redis-plain colored" }
       ]
+    },
+    {
+      id: 4,
+      title: "PskTodolist",
+      description: "A modern, interactive To-Do List application for task management and daily productivity tracking.",
+      link: "https://github.com/pskcode2004/PskTodolist",
+      image: "https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?auto=format&fit=crop&w=600&q=80",
+      tech: [
+        { name: "React", icon: "devicon-react-original colored" },
+        { name: "Tailwind CSS", icon: "devicon-tailwindcss-original colored" },
+        { name: "JavaScript", icon: "devicon-javascript-plain colored" }
+      ]
     }
   ];
 
