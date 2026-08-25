@@ -8,6 +8,7 @@ import GradientWaves from './GradientWaves';
 import BorderGlow from './BorderGlow';
 import { ParticleCard, GlobalSpotlight, useMobileDetection } from './MagicBento';
 import LineSidebar from './LineSidebar';
+import ShinyText from './ShinyText';
 
 function App() {
   const [theme, setTheme] = useState("dark");
@@ -218,6 +219,20 @@ function App() {
 
   const projects = [
     {
+      id: 1,
+      title: "WhatPDF",
+      description: "An application for interacting with PDF files. Built with Turborepo, Next.js, Upstash Redis, and Cloudflare.",
+      link: "https://github.com/pskcode2004/WhatPDF-",
+      image: "/whatpdf-preview.webp",
+      tech: [
+        { name: "Next.js", icon: "devicon-nextjs-original" },
+        { name: "React", icon: "devicon-react-original colored" },
+        { name: "TypeScript", icon: "devicon-typescript-plain colored" },
+        { name: "Tailwind CSS", icon: "devicon-tailwindcss-original colored" },
+        { name: "Redis (DB)", icon: "devicon-redis-plain colored" }
+      ]
+    },
+    {
       id: 2,
       title: "pskpongsakorn-Portfolio",
       description: "My personal portfolio website repository containing my projects, skills, and interactive UI components.",
@@ -243,7 +258,7 @@ function App() {
         { name: "TypeScript", icon: "devicon-typescript-plain colored" },
         { name: "Tailwind CSS", icon: "devicon-tailwindcss-original colored" },
         { name: "TensorFlow", icon: "devicon-tensorflow-original colored" },
-        { name: "Redis", icon: "devicon-redis-plain colored" }
+        { name: "Redis (DB)", icon: "devicon-redis-plain colored" }
       ]
     },
     {
@@ -255,7 +270,9 @@ function App() {
       tech: [
         { name: "React", icon: "devicon-react-original colored" },
         { name: "Tailwind CSS", icon: "devicon-tailwindcss-original colored" },
-        { name: "JavaScript", icon: "devicon-javascript-plain colored" }
+        { name: "JavaScript", icon: "devicon-javascript-plain colored" },
+        { name: "Supabase (DB)", icon: "devicon-supabase-plain colored" },
+        { name: "PostgreSQL (DB)", icon: "devicon-postgresql-plain colored" }
       ]
     }
   ];
@@ -387,23 +404,8 @@ function App() {
           />
         </div>
         <h1 className="display-hero" style={{ marginBottom: '16px', minHeight: '60px', zIndex: 1, display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: '16px' }}>
-          <DecryptedText
-            key={`${decryptKey}-1`}
-            text="Welcome to my"
-            animateOn="view"
-            speed={60}
-            maxIterations={20}
-            revealDirection="center"
-          />
-          <DecryptedText
-            key={`${decryptKey}-2`}
-            text="Portfolio"
-            animateOn="view"
-            speed={60}
-            maxIterations={20}
-            revealDirection="center"
-            className="portfolio-highlight"
-          />
+          <span>Welcome to my</span>
+          <ShinyText text="Portfolio" className="portfolio-highlight" speed={2.5} color="#2563eb" shineColor="#ffffff" spread={120} direction="left" />
         </h1>
         
         <div className="fade-in-section" style={{ transitionDelay: '1.5s', zIndex: 1 }}>
@@ -422,13 +424,13 @@ function App() {
             Hi, I'm <span className="portfolio-highlight" style={{ paddingLeft: '4px' }}>Pongsakorn</span>
           </h2>
           <div style={{ maxWidth: '800px', margin: '0 auto' }}>
-            <p className="body-default" style={{ color: 'var(--ink-secondary)', marginBottom: '16px', fontSize: '16px' }}>
-              I'm a 4th-year Computer Science student with a strong focus on Full-Stack Development. 
-              Experienced in building end-to-end web applications through real-world projects, covering UI design, database integration, authentication, real-time communication, and AI integration.
+            <p className="body-default" style={{ color: 'var(--ink-secondary)', marginBottom: '16px', fontSize: '16px', lineHeight: '1.7' }}>
+              I'm a 4th-year Computer Science student with a strong focus on <strong style={{ color: 'var(--ink-on-light)', fontWeight: '600' }}>Full-Stack Development</strong>. 
+              I have practical experience building end-to-end web applications through real-world projects—covering modern UI design, robust database architecture, secure authentication, real-time communication, and AI integration.
             </p>
-            <p className="body-default" style={{ color: 'var(--ink-secondary)', fontSize: '16px', marginBottom: '32px' }}>
-              Proficient in React, Next.js, TypeScript, Supabase, and PostgreSQL. 
-              Highly passionate about delivering secure, high-performance, and accessible systems that provide exceptional user experiences.
+            <p className="body-default" style={{ color: 'var(--ink-secondary)', fontSize: '16px', lineHeight: '1.7', marginBottom: '32px' }}>
+              Proficient in modern web ecosystems including <strong style={{ color: 'var(--ink-on-light)', fontWeight: '600' }}>React, Next.js, TypeScript, Supabase, and PostgreSQL</strong>. 
+              I am highly passionate about delivering secure, high-performance, and accessible systems that provide exceptional user experiences.
             </p>
             <div style={{ position: 'relative', display: 'inline-block' }}>
               <div 
@@ -486,10 +488,10 @@ function App() {
                   width: 'max-content',
                   animation: 'menuReveal 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards'
                 }}>
-                  <a href="/Pongsakorn_Permkham_ResumeTH.pdf" target="_blank" rel="noopener noreferrer" style={{ padding: '14px 24px', color: 'var(--ink-on-light)', textDecoration: 'none', display: 'flex', alignItems: 'center', gap: '10px', borderBottom: '1px solid var(--hairline-dark)', transition: 'background-color 0.2s', fontSize: '15px', fontWeight: '500' }} onMouseOver={(e) => e.currentTarget.style.backgroundColor = 'var(--surface-highlight)'} onMouseOut={(e) => e.currentTarget.style.backgroundColor = 'transparent'} onClick={() => setShowResumeOptions(false)}>
+                  <a href="/Psk_Resume_TH.pdf" target="_blank" rel="noopener noreferrer" style={{ padding: '14px 24px', color: 'var(--ink-on-light)', textDecoration: 'none', display: 'flex', alignItems: 'center', gap: '10px', borderBottom: '1px solid var(--hairline-dark)', transition: 'background-color 0.2s', fontSize: '15px', fontWeight: '500' }} onMouseOver={(e) => e.currentTarget.style.backgroundColor = 'var(--surface-highlight)'} onMouseOut={(e) => e.currentTarget.style.backgroundColor = 'transparent'} onClick={() => setShowResumeOptions(false)}>
                     <span style={{ fontSize: '18px' }}>🇹🇭</span> ภาษาไทย (TH)
                   </a>
-                  <a href="/Pongsakorn_Permkham_Resume_EN.pdf" target="_blank" rel="noopener noreferrer" style={{ padding: '14px 24px', color: 'var(--ink-on-light)', textDecoration: 'none', display: 'flex', alignItems: 'center', gap: '10px', transition: 'background-color 0.2s', fontSize: '15px', fontWeight: '500' }} onMouseOver={(e) => e.currentTarget.style.backgroundColor = 'var(--surface-highlight)'} onMouseOut={(e) => e.currentTarget.style.backgroundColor = 'transparent'} onClick={() => setShowResumeOptions(false)}>
+                  <a href="/Psk_Resume_EN.pdf" target="_blank" rel="noopener noreferrer" style={{ padding: '14px 24px', color: 'var(--ink-on-light)', textDecoration: 'none', display: 'flex', alignItems: 'center', gap: '10px', transition: 'background-color 0.2s', fontSize: '15px', fontWeight: '500' }} onMouseOver={(e) => e.currentTarget.style.backgroundColor = 'var(--surface-highlight)'} onMouseOut={(e) => e.currentTarget.style.backgroundColor = 'transparent'} onClick={() => setShowResumeOptions(false)}>
                     <span style={{ fontSize: '18px' }}>🇬🇧</span> English (EN)
                   </a>
                 </div>
@@ -703,11 +705,11 @@ function App() {
           <div className="about-grid">
             <div>
               <h3 className="heading-h2" style={{ marginBottom: '16px' }}>Let's collaborate</h3>
-              <p className="body-default" style={{ color: 'var(--ink-secondary)', marginBottom: '32px' }}>
-                I'm currently looking for new opportunities and open to exciting projects. Feel free to drop a message, whether you have a question or just want to say hi!
+              <p className="body-default" style={{ color: 'var(--ink-secondary)', marginBottom: '32px', lineHeight: '1.6' }}>
+                I am currently seeking new professional opportunities and am open to discussing potential projects or collaborations. Please feel free to reach out with any inquiries.
               </p>
               <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
-                <a href="mailto:memory.pongsakorn@gmail.com" className="link-standard body-strong">memory.pongsakorn@gmail.com</a>
+                <a href="mailto:pskcode2004@gmail.com" className="link-standard body-strong">pskcode2004@gmail.com</a>
                 <a href="tel:0618955968" className="link-standard body-strong">0618955968</a>
               </div>
             </div>
@@ -721,18 +723,22 @@ function App() {
               enableMagnetism={true}
               style={{ backgroundColor: 'var(--surface-highlight)', padding: '32px', borderRadius: 'var(--radius-lg)' }}
             >
-              <form style={{ display: 'flex', flexDirection: 'column', gap: '16px', position: 'relative', zIndex: 1 }}>
+              <form action="https://formsubmit.co/pskcode2004@gmail.com" method="POST" style={{ display: 'flex', flexDirection: 'column', gap: '16px', position: 'relative', zIndex: 1 }}>
+                {/* Prevent Captcha if possible */}
+                <input type="hidden" name="_captcha" value="false" />
+                {/* Add a subject line */}
+                <input type="hidden" name="_subject" value="New message from your Portfolio!" />
                 <div>
                   <label className="caption" style={{ display: 'block', marginBottom: '8px', fontWeight: '600' }}>Name</label>
-                  <input type="text" className="input-standard" placeholder="Your name" />
+                  <input type="text" name="name" className="input-standard" placeholder="Your name" required />
                 </div>
                 <div>
                   <label className="caption" style={{ display: 'block', marginBottom: '8px', fontWeight: '600' }}>Email</label>
-                  <input type="email" className="input-standard" placeholder="your@email.com" />
+                  <input type="email" name="email" className="input-standard" placeholder="your@email.com" required />
                 </div>
                 <div>
                   <label className="caption" style={{ display: 'block', marginBottom: '8px', fontWeight: '600' }}>Message</label>
-                  <textarea className="input-standard" rows="4" placeholder="How can we help?"></textarea>
+                  <textarea name="message" className="input-standard" rows="4" placeholder="How can I help?" required></textarea>
                 </div>
                 <button type="submit" className="btn-primary-dark" style={{ marginTop: '8px', cursor: 'pointer', position: 'relative', zIndex: 10 }}>
                   Send Message
@@ -769,13 +775,13 @@ function App() {
             <h4 className="body-strong" style={{ color: 'var(--ink-on-light)', margin: 0, fontSize: '16px' }}>Connect</h4>
             <a href="https://github.com/pskcode2004" target="_blank" rel="noreferrer" className="footer-link">GitHub</a>
             <a href="https://linkedin.com" target="_blank" rel="noreferrer" className="footer-link">LinkedIn</a>
-            <a href="mailto:memory.pongsakorn@gmail.com" className="footer-link">Email</a>
+            <a href="mailto:pskcode2004@gmail.com" className="footer-link">Email</a>
           </div>
         </div>
         
         <div style={{ maxWidth: '1200px', margin: '0 auto', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '32px', borderTop: '1px solid var(--hairline-dark)', paddingTop: '32px', overflow: 'hidden' }}>
           <div style={{ width: '100%', display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '16px' }}>
-            <span className="caption" style={{ color: 'var(--ink-secondary)' }}>© 2026 Pongsakorn Phomekham. All rights reserved.</span>
+            <span className="caption" style={{ color: 'var(--ink-secondary)' }}>© 2026 Pongsakorn P. All rights reserved.</span>
             <span className="caption" style={{ color: 'var(--ink-secondary)' }}>Designed & Built with React</span>
           </div>
           
@@ -791,7 +797,7 @@ function App() {
               textTransform: 'uppercase',
               userSelect: 'none'
             }}>
-              PONGSAKORN PHOMEKHAM
+              PONGSAKORN P.
             </div>
           </div>
         </div>
